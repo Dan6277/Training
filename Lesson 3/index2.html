@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lesson 3b</title>
+        <style>
+            /* Descendant */
+            section h2 {
+                background: blue;
+            }
+
+            /* Child */
+            section > h2 {
+                background: red;
+            }
+
+            /* Sibling */
+            p + article {
+                background: pink;
+            }
+
+            /* Child & Sibling */
+            section > h2 + div {
+                background: yellow;
+            }
+        </style>
+    </head>
+    <body>
+        <section>
+            <h2>Title 1</h2>
+            <div>
+                <h2>Title nested</h2>
+                <p>Paragraph nested</p>
+            </div>
+        </section>
+        <p>
+            First sibling
+        </p>
+        <article>
+            Not a sibling
+        </article>
+    </body>    
+</html>

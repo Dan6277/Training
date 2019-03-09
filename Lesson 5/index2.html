@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lesson 5</title>
+        <script src="jquery-3.3.1.min.js"></script>       
+        <style>                 
+            input + label { display: none; color: red; }
+        </style>   
+        <script>       
+            //when the document has already loaded
+            $(function(){
+                $("#name-form").on("submit",function(){
+                    var name = $("#name").val();
+                    if (name == "") {
+                        $("#name + label").show();
+                    } else {
+                        $("#name + label").hide();
+                    }
+                    console.log(name);
+                    return false;
+                });
+            });
+        </script>     
+    </head>
+    <body> 
+        <form id="name-form">
+            What is your name? 
+            <input type="text" id="name" name="name">
+            <label for="name">You need to fill in your name</label>
+            <div>
+                <input type="submit" id="submit-btn" name="submit-btn">
+            </div>
+        </form>         
+        
+    </body>
+</html>

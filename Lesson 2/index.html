@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+    <head>
+        <!-- This is a HTML comment -->
+        <title>Lesson 2 CSS</title>
+        <link rel="stylesheet" href="style.css" />
+        <style>
+            body {
+                font-size: 16px;
+                font-family: "Comic Sans MS", "Verdana", serif;
+            }
+
+            p {
+                background: red;
+                color: aquamarine;
+                font-size: 1em;                
+            }
+
+            /* This is a css comment */
+            div {
+                border-width: 3px;
+                border-color: #000;
+                border-style: dotted;
+                padding: 40px 30px 20px 10px;                
+                padding-top: 40px;
+                padding-right: 30px;
+                padding-bottom: 20px;
+                padding-left: 10px;
+                
+                width: 40%;                  
+                height: 200px;
+
+                float: left;
+                text-align: center;
+            }
+
+            section {
+                border: 3px dashed #000;
+                margin: 20px;
+                width: 40%;
+                float: right;
+            }
+
+            main {
+                width: 50%;
+            }
+
+            /* this is for an ID */
+            #left-side {
+                width: 40%;
+                background: brown;
+                display: inline-block;
+            }
+            #right-side {
+                width: 60%;
+                background: purple;                
+                display: inline-block;                
+            }
+            /* this is a class */
+            .primary-background-color {
+                background: blue;
+            }
+        </style>
+    </head>
+    <body>     
+        <main>
+            abc 123
+            <p style="background-color: blue;">Hello</p>
+            <p>Hello 2</p>
+            <p>Line 3</p>
+            <div style="color: blue;">Hi</div>        
+            <section>
+                this is <span style="font-weight: bold;">my</span> section
+            </section>
+            <article style="clear: both;"></article>
+            <!-- ids can only be used once -->
+            <article id="left-side">Left side</article><article id="right-side">Right side</article> 
+            <!-- classes can be reused -->
+            <article class="primary-background-color">Yellow 1</article>
+            <article class="primary-background-color">Yellow 2</article>
+            <article class="primary-background-color">Yellow 3</article>
+            <article class="primary-background-color">Yellow 4</article>
+            <article class="primary-background-color">Yellow 5</article>
+            <article class="primary-background-color">Yellow 6</article>
+        </main>   
+    </body>
+</html>

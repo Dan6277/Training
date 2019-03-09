@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lesson 4 Prac</title>
+        <!-- External CSS File  -->
+        <link rel="stylesheet" href="style.css" />
+        <!-- External JavaScript File -->
+        <script src="script.js"></script>                
+    </head>
+    <body>
+        <form>
+            <label>What number am I thinking of between 1-10?</label>
+            <input type="text" id="number-guess" name="number-guess" maxlength="2" />
+            <input type="submit" id="number-submit" name="number-submit" value="Guess" />
+        </form>
+        <script>
+            //random number between 1 to 10
+            var randomNumber = Math.ceil(Math.random() * 10); //brackets first, then gets the ceiling
+        
+            //console.log(12=="12"); //true
+            //console.log(12==="12"); //false
+
+            //console.log(12+5); //17
+            //console.log("12"+5); //string equaling 125            
+            //console.log("12"-5); //7
+
+            document.getElementById("number-submit").onclick = function(){
+                console.log(randomNumber);
+                //this code in here will only run when the on click event has happened (fired)                
+                var userGuess = parseInt(document.getElementById("number-guess").value);
+                console.log("Random Number:",randomNumber);
+                console.log("User Guess:",userGuess);
+
+                if (randomNumber == userGuess) {                    
+                    alert("You are correct! The number was "+randomNumber);
+                } else if ((userGuess-1) == randomNumber || (userGuess+1) == randomNumber) {
+                    alert("You are very close... try again");
+                } else {
+                    alert("You are incorrect... your guess was "+userGuess+", please try again...");
+                }
+
+                return false; //stops the browser from reloading
+            }            
+        </script>
+    </body>    
+</html>

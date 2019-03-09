@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lesson 5</title>
+        <script src="jquery-3.3.1.min.js"></script>       
+        <style>     
+            /* id */       
+            #main-site { } 
+
+
+            /* hides a div */
+            #hidden-div { display: none; }
+            /* class */
+            .red { background: red; }
+            .blue { color: blue; font-weight: bold; }
+        </style>
+        
+    </head>
+    <body>        
+        <div id="hidden-div">This is hiding from you</div>        
+        <div id="click-me">
+            Sup
+        </div>
+        <div class="red"></div>
+        <script>        
+            //document.getElementById("main-site").className = "red"; //pure JavaScript
+            //$("#main-site").addClass("red"); //jQuery            
+
+            //document.getElementById("main-site").onclick = function() {
+            //alert('you clicked me');
+            //}
+
+            $("#click-me").on("click",function(){
+                $("#hidden-div").addClass("red");
+                $("#hidden-div").removeClass("red");
+                $("#hidden-div").fadeIn(1400);
+                $("#click-me").append("<div>Hello there...</div>");
+                $("#click-me").prepend("<div>This is at the start</div>");
+                $(".red").append("hey");
+            });
+        </script>
+    </body>
+</html>

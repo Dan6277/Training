@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lesson 2 Refresh</title>
+        <!-- CSS code goes next-->
+        <!-- Note the different brackets-->
+        <style>
+            /* This is a CSS note */
+            body{
+                font-size: 30px;
+                text-align: center;
+                margin: 0px;
+                padding: 0px;
+            }
+            body, html {
+                width: 100%;
+                height: 100%;
+            }
+            main{                
+                width: 60%;
+                display: inline-block;
+            }
+
+            header{                            
+                height: 100px;
+                background: blue;
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            #flex-wrapper {
+                display: flex;                
+            }   
+
+            footer { 
+                width: 100%;
+                height: 100px;
+                margin-top: 10px;
+                background: green !important;
+            }         
+            
+
+            #left-side, #right-side, header, footer {
+                background: red;
+                display: flex; 
+                justify-content: center;
+                align-items: center;     
+            }            
+
+            /* Here is the ID */
+            #left-side{                                     
+                width: 30%;
+                height: 500px;                
+                border: 1px solid #000;
+            }
+
+            #right-side{            
+                width: 70%;
+                height: 500px;               
+                margin-left: 10px;      
+                border: 1px solid #000;          
+            }
+
+           
+        </style>
+    </head>
+    <body>        
+        <main>
+            <header>
+                Header
+            </header>
+            <div id="flex-wrapper">
+                <div id="left-side">
+                    <a href="#">Div Left</a>
+                </div>
+                <!-- Look I made an ID -->
+                <div id="right-side">
+                    <a href="#">Section Right</a>
+                </div>
+            </div>
+            <footer>
+                Footer
+            </footer>
+        </main>
+    </body>
+</html>

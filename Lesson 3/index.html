@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lesson 3</title>
+        <style>
+            #wrapper #list-1 li {
+                background: red;
+            }
+
+            #wrapper #list-1 li:first-child {
+                background: pink;                
+            }
+            
+            #wrapper #list-1 li:last-child {
+                background: green;                
+            }            
+
+            #wrapper #list-1 li:last-of-type {
+
+            }
+
+            #wrapper #list-1 li:nth-child(2) {
+                background: brown;                
+            }         
+
+            a:link { background: red; }   
+            a:visited { background: blue; }
+            a:hover { background: yellow; }
+            a:active { background: green; }
+            a:focus { background: purple; }
+
+            /* if the last child is a ul, then apply style */
+            #wrapper ul:last-child {
+                background: blue;
+            }
+
+            /* find the last ul and apply style */
+            #wrapper ul:last-of-type {
+                background: black;
+            }
+
+            #wrapper:after {
+                content: "this comes after";
+                border: 2px solid green;
+            }
+
+            #wrapper:before {
+                content: "this comes before";
+                border: 2px solid blue;
+            }
+
+            #wrapper #list-1:hover li:first-of-type {
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        ...
+        <div id="wrapper">
+            <!-- :BEFORE gets applied -->
+            <ul id="list-1">
+                <li>Line 1</li>
+                <li>Line 2</li>
+                <li>Line 3</li>
+                <li>Line 4</li>                
+            </ul>
+            <ul id="list-2">
+                <li>Line 1</li>
+                <li>Line 2</li>
+                <li>Line 3</li>
+            </ul>
+            <div>
+                abc
+            </div>
+            <!-- :AFTER gets applied -->
+        </div>
+        ...
+        <a href="http://www.google.com">I will go to google</a>
+    </body>    
+</html>

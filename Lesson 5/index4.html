@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calc</title>
+        
+        <style>
+            body{margin:0px; padding: 0px;}
+            body,html { height:100%; width: 100%; }
+            #calc{height: 100%; display: flex; justify-content: center; align-items: center;}
+            .button{border:none; height:50px; width:50px; margin:5px;}
+            #display{height:50px; width:236px; margin:5px;}
+            #display2{height:45px; width:172px; margin:5px;}
+        </style>
+    </head>
+    <body>
+        <form id="calc">
+            <div><input type="text" id="display" value=""/>
+            <div>
+                <input type="text" id="display2" value=""/>
+                <input class="button" type="button" id="ce" value="CE" onclick="clear2()"/>
+            </div>
+            <div>
+                <input class="button" type="button" id="1" value="1" onclick="numbers(this)"/>
+                <input class="button" type="button" id="2" value="2" onclick="numbers(this)"/>
+                <input class="button" type="button" id="3" value="3" onclick="numbers(this)"/>
+                <input class="button" type="button" id="+" value="+" onclick="action1(this)"/>
+            </div>
+            <div>
+                <input class="button" type="button" id="4" value="4" onclick="numbers(this)"/>
+                <input class="button" type="button" id="5" value="5" onclick="numbers(this)"/>
+                <input class="button" type="button" id="6" value="6" onclick="numbers(this)"/>
+                <input class="button" type="button" id="-" value="-" onclick="action1(this)"/>
+            </div>
+            <div>
+                <input class="button" type="button" id="7" value="7" onclick="numbers(this)"/>
+                <input class="button" type="button" id="8" value="8" onclick="numbers(this)"/>
+                <input class="button" type="button" id="9" value="9" onclick="numbers(this)"/>
+                <input class="button" type="button" id="x" value="x" onclick="action1(this)"/>
+            </div>
+            <div>
+                <input class="button" type="button" id="c" value="C" onclick="clear1()"/>
+                <input class="button" type="button" id="0" value="0" onclick="numbers(this)"/>
+                <input class="button" type="button" id="=" value="=" onclick="equals1()"/>
+                <input class="button" type="button" id="/" value="/" onclick="action1(this)"/>
+            </div>
+        </div>
+            
+        </form>
+        <script>
+            var runningTotal = null;
+            var localRunning = null;
+            var operation = null;
+            var clearAfter = false;       
+            // var displayButton = document.getElementById("display");
+            
+            function numbers(button){                            
+                var display = document.getElementById("display");
+                if (clearAfter == true) {
+                    display.value = "";
+                    clearAfter = false;
+                }
+                var number1 = button.value;
+                display.value += number1;                
+                return false;
+            }
+    
+            function action1(button){
+                localRunning = parseInt(document.getElementById("display").value);
+                var math = daMath (operation,runningTotal,localRunning)
+                clearAfter = true;
+                operation = button.value;                
+                runningTotal = math;
+                document.getElementById("display").value = runningTotal;
+                document.getElementById("display2").value += localRunning + operation;
+                return false;
+            }           
+            
+            /*
+            function daMath(operation,runningTotal,localRunning){
+                var result = null;
+                switch(operation) {
+                    case "+":
+                        result = add(runningTotal,localRunning);
+                    break;
+                    case "-":
+                        result = add(runningTotal,localRunning);
+                    break;
+                    default: //if doesn't match
+
+                    break;
+                }
+                return result;
+            }
+            */
+            
+            function daMath(operation,runningTotal,localRunning){
+                var result = null;
+                if (operation == "+"){
+                    result = add(runningTotal,localRunning);
+                } else if (operation == "-"){
+                    result = minus(runningTotal,localRunning);
+                } else if (operation =="x"){
+                    result = times(runningTotal,localRunning);
+                } else if (operation == "/"){
+                    result = divide(runningTotal,localRunning); 
+                } else if (operation == null){
+                    result = localRunning;
+                }
+                return result;
+            }
+
+            function add(num1,num2) {
+                return num1 + num2;
+            }
+            function minus(num1,num2){
+                return num1 - num2;
+            }
+            function times(num1,num2){
+                return num1 * num2;
+            }
+            function divide(num1,num2){
+                return num1 / num2;
+            }
+            
+            function clear1(){
+                document.getElementById("display").value = "";
+            }
+
+            function clear2(){
+                localRunning = null;
+                runningTotal = null;
+                operation = null;
+                document.getElementById("display").value = "";
+                document.getElementById("display2").value = "";
+            }
+
+            function equals1(){
+                localRunning = parseInt(document.getElementById("display").value);
+                var math = daMath (operation,runningTotal,localRunning)
+                runningTotal = math;                
+                document.getElementById("display").value = "";
+                document.getElementById("display2").value += localRunning + "=" + runningTotal;
+            }                        
+        </script>
+    </body>
+</html>

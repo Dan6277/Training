@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Lesson 2 Prac</title>
+        <style>
+            body{
+                font-size: 30px;
+                text-align: center;                
+            }
+            main{
+                width: 60%;
+                display: inline-block;
+            }
+            header {
+               background: lightblue;
+               font-size: 1.4em;
+               width: 100%;
+               height: 100px;
+               text-align: center;            
+               margin: 20px;
+            }
+            div{
+                background: lightyellow;
+                height: 600px;
+                float: left;
+                margin: 20px;
+                width: calc(30% - 40px);
+            }    
+            section{
+                background: pink;
+                height: 600px;
+                line-height: 600px;
+                text-align: center;
+                float: right;
+                margin: 20px;
+                width: calc(70% - 40px);
+            }
+            footer{
+                background: lightgreen;
+                font-size: 1.3em;
+                width: 100%;
+                height: 100px;
+                text-align: center;
+                margin: 20px;
+            }
+            /* this is to fix float weirdness */
+            article{
+                overflow: auto;
+            }
+           
+           </style>
+    </head>
+    <body>
+        <main>
+            <header>
+                Header
+            </header>            
+            <article>
+                <div>
+                    Side Bar
+                </div>
+                <section>
+                    Content
+                </section> 
+            </article>                                 
+            <footer>
+                Footer
+            </footer>
+        </main>
+    </body>
+</html>

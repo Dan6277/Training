@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lesson 4 CALC</title>
+    </head>
+    <body>
+        <h1>Calc</h1>
+        <form>
+            <div><input type="text" id="first-number" name="first-number"/></div>
+            <div>
+                <select id="instruct">
+                    <option value="+">+</option>
+                    <option value="-">-</option>
+                    <option value="*">x</option>
+                    <option value="/">/</option>
+                </select>
+            </div>
+            <div><input type="text" id="second-number" name="second-number"/></div>
+            <div><input type="submit" id="submit" name="submit" value="="/></div>
+            <div><input type="text" id="answer" name="answer"/></div>
+        </form>
+        <script>
+            //create functions for subtract, divide, add                    
+            function multiply(first, second) {
+                return first * second;
+            }
+            function subtract(first, second) {
+                return first - second;
+            }
+            function add(first, second){
+                return first + second;
+            }
+            function divide(first, second){
+                return first / second;
+            }
+            function doMath(symbol, first, second) {                                
+                var returnValue = null;
+                if (symbol == "+") {
+                    returnValue = add(first, second);
+                } else if (symbol == "*") {
+                    returnValue = multiply(first, second);
+                } else if (symbol == "-") {
+                    returnValue = subtract(first, second);
+                } else if (symbol == "/") {
+                    returnValue = divide(first, second);
+                }
+                return returnValue;
+            }
+
+            document.getElementById("submit").onclick = function(){
+                var answer = document.getElementById("answer");
+                var dropDown = document.getElementById("instruct");                
+                var selectedValue = dropDown.options[dropDown.selectedIndex].value;                                
+                var firstNumber = parseInt(document.getElementById("first-number").value);
+                var secondNumber = parseInt(document.getElementById("second-number").value);
+                var math = doMath(selectedValue, firstNumber, secondNumber);
+                answer.value = math;                
+                return false;
+            }                    
+                      
+        </script>
+    </body>
+</html>

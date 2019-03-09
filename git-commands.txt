@@ -1,0 +1,6 @@
+git add .
+git commit -m "<some message>"
+git push -u origin master
+
+
+git status (to see what files have been modified)
