@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Submit Form</title>
+        <script src="jquery-3.3.1.min.js"></script>
+        <script src="site2.js"></script>
+        <link rel="stylesheet" href="style2.css"/>
+    </head>
+    <body>
+        <form id="register" name="register" autocomplete="off">
+            <div>
+                Name:<input type="text" id="name-input" name="name-input" class="input" placeholder="Input name here."/>
+            </div>
+            <div id="name-hidden" name="name-hidden" class="hidden">Please input name.</div>        
+            <div>
+                Email:<input type="text" id="email-input" name="email-input" class="input" placeholder="Input email here."/>
+            </div>
+            <div id="email-hidden" name ="email-hidden" class="hidden">Please input valid email.</div>
+            <div>
+                Phone:<input type="text" id="phone-input" name="phone-input" class="input" placeholder="Input phone here."/>
+            </div>
+            <div id="phone-hidden" name="phone-hidden" class="hidden">Please input valid phone number.</div>
+            <div>
+                DOB:<input type="text" id="dob-input" name="dob-input" class="input" placeholder="Input DOB here."/> 
+            </div>
+            <div id="dob-hidden" name="dob-hidden" class="hidden">Please input valid Date of Birth.</div>
+            <div>
+                <input type="submit" id="submit" name="submit" value="Submit"/>
+            </div>
+            <div id="log" name="log"></div>
+        </form>
+    </body>
+</html>

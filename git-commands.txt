@@ -1,4 +1,7 @@
+right click -> git bash here
+
 git add .
+git status
 git commit -m "<some message>"
 git push -u origin master
 
